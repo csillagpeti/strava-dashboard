@@ -112,8 +112,7 @@ export default function Charts({ activities }: { activities: StravaActivity[] })
                   interval="preserveStartEnd"
                 />
                 <YAxis
-                  domain={[paceMin, paceMax]}
-                  reversed
+                  domain={[paceMax + 0.3, paceMin - 0.3]}
                   tickFormatter={formatPaceTick}
                   tick={{ fill: "#9ca3af", fontSize: 10 }}
                   axisLine={false}
@@ -134,7 +133,7 @@ export default function Charts({ activities }: { activities: StravaActivity[] })
                 />
               </LineChart>
             </ResponsiveContainer>
-            <p className="text-gray-600 text-xs mt-1">Lower = faster</p>
+            <p className="text-gray-600 text-xs mt-1">Higher = faster</p>
           </div>
         </section>
       )}
